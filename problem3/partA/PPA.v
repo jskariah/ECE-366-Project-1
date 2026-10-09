@@ -1,6 +1,6 @@
 module PPA(A, B, Cin, S, Cout);
 
-input [15 : 0] A, B
+input [15 : 0] A, B;
 input Cin;
 output [15 : 0] S;
 output Cout;
