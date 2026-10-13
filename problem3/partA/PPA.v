@@ -198,6 +198,38 @@ GP_Block GP30 (P9_7,  G9_7,  P6_m1, G6_m1, P9_m1,  G9_m1);
 GP_Block GP31 (P8_7,  G8_7,  P6_m1, G6_m1, P8_m1,  G8_m1);
 GP_Block GP32 (P[7],   G[7],   P6_m1, G6_m1, P7_m1,  G7_m1);
 
+// Final carry-out --> Combines bit 15 with the prefix covering bits 14 through -1
+
+wire P15_m1;
+wire G15_m1;
+
+GP_Block GP33 (
+    P[15], G[15],
+    P14_m1, G14_m1,
+    P15_m1, G15_m1
+);
+
+assign Cout = G15_m1;
+
+// Post-computation --> Each sum bit uses its incoming carry from the prefix tree
+
+xor(S[0],  A[0],  B[0],  Gm1);
+xor(S[1],  A[1],  B[1],  G0_m1);
+xor(S[2],  A[2],  B[2],  G1_m1);
+xor(S[3],  A[3],  B[3],  G2_m1);
+xor(S[4],  A[4],  B[4],  G3_m1);
+xor(S[5],  A[5],  B[5],  G4_m1);
+xor(S[6],  A[6],  B[6],  G5_m1);
+xor(S[7],  A[7],  B[7],  G6_m1);
+xor(S[8],  A[8],  B[8],  G7_m1);
+xor(S[9],  A[9],  B[9],  G8_m1);
+xor(S[10], A[10], B[10], G9_m1);
+xor(S[11], A[11], B[11], G10_m1);
+xor(S[12], A[12], B[12], G11_m1);
+xor(S[13], A[13], B[13], G12_m1);
+xor(S[14], A[14], B[14], G13_m1);
+xor(S[15], A[15], B[15], G14_m1);
+
 endmodule
 
 // Gen & Propogate block --> combines the two P/G groups into a larger group
