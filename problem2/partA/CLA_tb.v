@@ -24,7 +24,7 @@ initial begin
     $dumpvars(0, CLA_tb);
 
 
-    // Test 1: Simple unsigned addition
+    // Test 1: Addition
     // 10 + 5 = 15
     A = 32'd10;
     B = 32'd5;
@@ -35,7 +35,7 @@ initial begin
              A, B, Cin, S, Cout);
 
 
-    // Test 2: Another unsigned addition
+    // Test 2: Addition
     // 100 + 200 = 300
     A = 32'd100;
     B = 32'd200;
@@ -70,12 +70,7 @@ initial begin
 
     // Test 5: Carry propagation across multiple 4-bit blocks
     // 0000FFFF + 1 = 00010000
-    //
-    // Carry must propagate through:
-    // bits 3:0
-    // bits 7:4
-    // bits 11:8
-    // bits 15:12
+   
     A = 32'h0000FFFF;
     B = 32'h00000001;
     Cin = 0;
