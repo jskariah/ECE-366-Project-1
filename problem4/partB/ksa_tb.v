@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module tb_ksa;
+module tb_ks;
   
   // 16-bit testbench registers and wires
   reg [15:0] A;
@@ -11,7 +11,7 @@ module tb_ksa;
   wire Cout;
   
   // Instantiate 16-bit Kogee-Stone(KS) Adder
-  ksa uut (
+  ks uut (
     .A(A),
     .B(B),
     .Cin(Cin),
@@ -21,7 +21,7 @@ module tb_ksa;
 
   initial begin
     $dumpfile("dump.vcd");
-    $dumpvars(0, tb_ksa);
+    $dumpvars(0, tb_ks);
 
     $display("==========================================================================================");
     $display("Time   | A       |B       | Cin | S        | Cout | Description");
