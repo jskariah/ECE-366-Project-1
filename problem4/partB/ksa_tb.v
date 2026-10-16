@@ -37,10 +37,10 @@ module tb_ksa;
     #10;
     $display("%7t | %h | %h | %b | %h | %b | Signed Add (Negative Operand)", $time, A, B, Cin, S, Cout);
 
-    // Case 3: MSB Carry-Out Generated
-    A = 16'h8000; B = 16'h8000; Cin = 1'b0;
+    // Case 3: Carry-Out Generated
+    A = 16'h9000; B = 16'h9000; Cin = 1'b0;
     #10;
-    $display("%7t | %h | %h | %b | %h | %b | MSB Carry-Out Generated", $time, A, B, Cin, S, Cout);
+    $display("%7t | %h | %h | %b | %h | %b | Carry-Out Generated", $time, A, B, Cin, S, Cout);
 
     // Case 4: Full Multi-Bit Propagation (All 16 bits)
     A = 16'hFFFF; B = 16'h0000; Cin = 1'b0;
