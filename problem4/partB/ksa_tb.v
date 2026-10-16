@@ -42,10 +42,10 @@ module tb_ksa;
     #10;
     $display("%7t | %h | %h | %b | %h | %b | Carry-Out Generated", $time, A, B, Cin, S, Cout);
 
-    // Case 4: Full Multi-Bit Propagation (All 16 bits)
-    A = 16'hFFFF; B = 16'h0000; Cin = 1'b0;
+    // Case 4: Full Propagation
+    A = 16'h7FFF; B = 16'h0000; Cin = 1'b0;
     #10;
-    $display("%7t | %h | %h | %b | %h | %b | Multi-Bit Propagate (All 16 bits)", $time, A, B, Cin, S, Cout);
+    $display("%7t | %h | %h | %b | %h | %b | Full Propagation", $time, A, B, Cin, S, Cout);
 
     // Case 5: Propagation across middle-to-upper bits
     A = 16'hFF00; B = 16'h0100; Cin= 1'b0;
