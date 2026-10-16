@@ -32,10 +32,10 @@ module tb_ksa;
     #10;
     $display("%7t | %h | %h | %b | %h | %b | Unsigned Add", $time, A, B, Cin, S, Cout);
 
-    // Case 2: Sign Addition
-    A = 16'h0064; B = 16'hFFE7; Cin = 1'b0;
+    // Case 2: Sign Addition with Negative Operand (95 + (-10) = 85)
+    A = 16'h005F; B = 16'hFFF6; Cin = 1'b0;
     #10;
-    $display("%7t | %h | %h | %b | %h | %b | Signed Add (Neg Operand)", $time, A, B, Cin, S, Cout);
+    $display("%7t | %h | %h | %b | %h | %b | Signed Add (Negative Operand)", $time, A, B, Cin, S, Cout);
 
     // Case 3: MSB Carry-Out Generated
     A = 16'h8000; B = 16'h8000; Cin = 1'b0;
