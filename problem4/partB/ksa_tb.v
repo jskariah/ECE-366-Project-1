@@ -47,10 +47,10 @@ module tb_ksa;
     #10;
     $display("%7t | %h | %h | %b | %h | %b | Full Propagation", $time, A, B, Cin, S, Cout);
 
-    // Case 5: Propagation across middle-to-upper bits
-    A = 16'hFF00; B = 16'h0100; Cin= 1'b0;
+    // Case 5: Upper-Bit Carry Propagation
+    A = 16'hFE00; B = 16'h0200; Cin= 1'b0;
     #10;
-    $display("%7t | %h | %h | %b | %h | %b | Multi-Bit Propagarte (Bits 8-15)", $time, A, B, Cin, S, Cout);
+    $display("%7t | %h | %h | %b | %h | %b | Upper-Bit Carry Propagation", $time, A, B, Cin, S, Cout);
 
     $display("==========================================================================================");
     $10;
