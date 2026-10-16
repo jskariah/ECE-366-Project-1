@@ -11,7 +11,7 @@ module tb_ks;
   wire Cout;
   
   // Instantiate 16-bit Kogee-Stone(KS) Adder
-  ks uut (
+  KS uut (
     .A(A),
     .B(B),
     .Cin(Cin),
