@@ -30,5 +30,7 @@ module tb_ksa;
     // Case 1: Unsigned Addition
     A = 16'h1234; B = 16'h5678; Cin = 1'b0;
     #10;
-    $display("
+    $display("%7t | %h | %h | %b | %h | %b | Unsigned Add", $time, A, B, Cin, S, Cout);
+
+    // Case 2: Sign
   
