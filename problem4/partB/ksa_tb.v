@@ -43,7 +43,7 @@ module tb_ksa;
     $display("%7t | %h | %h | %b | %h | %b | Carry-Out Generated", $time, A, B, Cin, S, Cout);
 
     // Case 4: Full Propagation
-    A = 16'h7FFF; B = 16'h0000; Cin = 1'b0;
+    A = 16'h7FFF; B = 16'h0000; Cin = 1'b1;
     #10;
     $display("%7t | %h | %h | %b | %h | %b | Full Propagation", $time, A, B, Cin, S, Cout);
 
@@ -53,7 +53,7 @@ module tb_ksa;
     $display("%7t | %h | %h | %b | %h | %b | Upper-Bit Carry Propagation", $time, A, B, Cin, S, Cout);
 
     $display("==========================================================================================");
-    $10;
+    #10;
     $finish;
   end
 
