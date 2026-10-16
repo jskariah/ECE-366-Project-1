@@ -27,5 +27,8 @@ module tb_ksa;
     $display("Time   | A       |B       | Cin | S        | Cout | Description");
     $display("==========================================================================================");
 
-    // Case 1: 
+    // Case 1: Unsigned Addition
+    A = 16'h1234; B = 16'h5678; Cin = 1'b0;
+    #10;
+    $display("
   
