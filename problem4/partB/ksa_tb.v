@@ -32,5 +32,25 @@ module tb_ksa;
     #10;
     $display("%7t | %h | %h | %b | %h | %b | Unsigned Add", $time, A, B, Cin, S, Cout);
 
-    // Case 2: Sign
+    // Case 2: Sign Addition
+    A = 16'h0064; B = 16'hFFE7; Cin = 1'b0;
+    #10;
+    $display("%7t | %h | %h | %b | %h | %b | Signed Add (Neg Operand)", $time, A, B, Cin, S, Cout);
+
+    // Case 3: MSB Carry-Out Generated
+    A = 16'h8000; B = 16'h8000; Cin = 1'b0;
+    #10;
+    $display("%7t | %h | %h | %b | %h | %b | MSB Carry-Out Generated", $time, A, B, Cin, S, Cout);
+
+    // Case 4: Full Multi-Bit Propagation (All 16 bits)
+    A = 16'hFFFF; B = 16'h0000; Cin = 1'b0;
+    #10;
+    $display("%7t | %h | %h | %b | %h | %b | Multi-Bit Propagate (All 16 bits)", $time, A, B, Cin, S, Cout);
+
+    // Case 5: Propagation across middle-to-upper bits
+    A = 16'hFF00; B = 16'h0100; Cin= 1'b0;
+    #10;
+    $display("%7t | %h | %h | %b | %h | %b | Multi-Bit Propagarte (Bits 8-15)", $time, A, B, Cin, S, Cout);
+    
+             
   
